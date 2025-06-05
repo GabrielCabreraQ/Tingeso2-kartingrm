@@ -368,7 +368,7 @@ public class IncomingReportService {
 
 
     public List<Booking> getBookingsBetweenDates(LocalDate startDate, LocalDate endDate) {
-        String url = UriComponentsBuilder.fromHttpUrl("http://Booking-service/api/booking/betweendays/{start}/{end}")
+        String url = UriComponentsBuilder.fromHttpUrl("http://booking-service/api/booking/betweendays/{start}/{end}")
                 .buildAndExpand(startDate.toString(), endDate.toString())
                 .toUriString();
 
@@ -381,7 +381,7 @@ public class IncomingReportService {
     }
 
     public List<Booking> getBookingsByLapsAndDate(int laps, int month, int year) {
-        String url = UriComponentsBuilder.fromHttpUrl("http://Booking-service/api/booking/filter/{laps}/{month}/{year}")
+        String url = UriComponentsBuilder.fromHttpUrl("http://booking-service/api/booking/filter/{laps}/{month}/{year}")
                 .buildAndExpand(laps, month, year)
                 .toUriString();
 

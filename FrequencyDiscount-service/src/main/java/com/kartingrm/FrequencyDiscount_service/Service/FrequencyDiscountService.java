@@ -48,7 +48,7 @@ public class FrequencyDiscountService {
     //================== REST TEMPLATE METHODS ==========================//
 
     public long getVisitCount(Long clientId, int month, int year) {
-        String url = "http://Booking-service/api/booking/visit/" + clientId + "/" + month + "/" + year;
+        String url = "http://booking-service/api/booking/visit/" + clientId + "/" + month + "/" + year;
         return restTemplate.getForObject(url, Long.class);
 
 
