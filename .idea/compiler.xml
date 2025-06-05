@@ -32,19 +32,19 @@
         <processorPath>
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="Booking-service" />
+        <module name="booking-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Booking-service" options="-parameters" />
       <module name="FrequencyDiscount-service" options="-parameters" />
       <module name="GroupDiscount-service" options="-parameters" />
       <module name="IncomingReport-service" options="-parameters" />
       <module name="Pricing-service" options="-parameters" />
       <module name="SpecialDays-service" options="-parameters" />
       <module name="Track-service" options="-parameters" />
+      <module name="booking-service" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
