@@ -14,17 +14,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
+        <processorPath>
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="config-service" />
         <module name="GroupDiscount-service" />
         <module name="Track-service" />
-        <module name="Booking-service" />
         <module name="SpecialDays-service" />
         <module name="FrequencyDiscount-service" />
         <module name="Pricing-service" />
         <module name="IncomingReport-service" />
+      </profile>
+      <profile name="Annotation profile for Booking-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath>
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Booking-service" />
       </profile>
     </annotationProcessing>
   </component>
