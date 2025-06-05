@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway-service" />
+      </profile>
+      <profile name="Annotation profile for eureka-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="eureka-service" />
+        <module name="config-service" />
+        <module name="GroupDiscount-service" />
+        <module name="Track-service" />
+        <module name="Booking-service" />
+        <module name="SpecialDays-service" />
+        <module name="FrequencyDiscount-service" />
+        <module name="Pricing-service" />
+        <module name="IncomingReport-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Booking-service" options="-parameters" />
+      <module name="FrequencyDiscount-service" options="-parameters" />
+      <module name="GroupDiscount-service" options="-parameters" />
+      <module name="IncomingReport-service" options="-parameters" />
+      <module name="Pricing-service" options="-parameters" />
+      <module name="SpecialDays-service" options="-parameters" />
+      <module name="Track-service" options="-parameters" />
+      <module name="config-service" options="-parameters" />
+      <module name="eureka-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+    </option>
+  </component>
+</project>

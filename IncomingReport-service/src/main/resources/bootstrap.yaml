@@ -1,1 +1,14 @@
-spring.application.name=IncomingReport-service
+spring:
+  application:
+    name: IncomingReport-service
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/incomingreport
+    user: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
