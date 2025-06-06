@@ -1,4 +1,4 @@
-package com.kartingrm.Track_service.Model;
+package com.kartingrm.track_service.Model;
 
 
 import lombok.AllArgsConstructor;

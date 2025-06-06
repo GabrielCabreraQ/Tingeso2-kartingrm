@@ -1,7 +1,6 @@
-package com.kartingrm.GroupDiscount_service.Model;
+package com.kartingrm.groupdiscount_service.Model;
 
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

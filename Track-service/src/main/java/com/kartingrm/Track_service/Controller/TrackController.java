@@ -1,7 +1,7 @@
-package com.kartingrm.Track_service.Controller;
+package com.kartingrm.track_service.Controller;
 
 
-import com.kartingrm.Track_service.Service.TrackService;
+import com.kartingrm.track_service.Service.TrackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,6 @@ import java.time.LocalTime;
 
 @RestController
 @RequestMapping("/api/track")
-@CrossOrigin("*")
 public class TrackController {
 
     @Autowired

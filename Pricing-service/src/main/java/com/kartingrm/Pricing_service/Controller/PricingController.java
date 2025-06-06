@@ -1,13 +1,13 @@
-package com.kartingrm.Pricing_service.Controller;
+package com.kartingrm.pricing_service.Controller;
 
 
 
-import com.kartingrm.Pricing_service.Entity.Pricing;
-import com.kartingrm.Pricing_service.Model.BdayPricingRequest;
-import com.kartingrm.Pricing_service.Model.BirthdayCheckRequest;
-import com.kartingrm.Pricing_service.Model.Client;
-import com.kartingrm.Pricing_service.Model.PricePersonRequest;
-import com.kartingrm.Pricing_service.Service.PricingService;
+import com.kartingrm.pricing_service.Entity.Pricing;
+import com.kartingrm.pricing_service.Model.BdayPricingRequest;
+import com.kartingrm.pricing_service.Model.BirthdayCheckRequest;
+import com.kartingrm.pricing_service.Model.Client;
+import com.kartingrm.pricing_service.Model.PricePersonRequest;
+import com.kartingrm.pricing_service.Service.PricingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pricing")
-@CrossOrigin("*")
 public class PricingController {
+
     @Autowired
     private PricingService pricingService;
 
@@ -67,22 +67,23 @@ public class PricingController {
         return pricingService.getBasePriceForLaps(numberLap);
     }
 
-    @PostMapping("/calculate-daydiscount")
+    @PostMapping("/calculate-bdaydiscount")
     public double calculateBirthdayDiscount(
             @RequestBody Client participant,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate bookingDate) {
         return pricingService.calculateBirthdayDiscount(participant, bookingDate);
     }
 
-    @PostMapping("/calculate-price-person")
+    @PostMapping("/calculate-price")
     public double calculatePricePerPerson(
-            @RequestBody PricePersonRequest request,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate bookingDate,
-            @RequestParam int groupSize,
-            @RequestParam int numberLap,
-            @RequestParam int applyBirthday) {
+            @RequestBody PricePersonRequest request) {
         return pricingService.calculatePricePerPerson(
-                request.getParticipant(), bookingDate, groupSize, numberLap, request.getPricing(), applyBirthday);
+                request.getParticipant(),
+                request.getBookingDate(),
+                request.getGroupSize(),
+                request.getNumberLap(),
+                request.getPricing(),
+                request.getApplyBirthday());
     }
 
     @PostMapping("/calculate-birthday-total")
@@ -101,7 +102,6 @@ public class PricingController {
         pricingService.deletePricing(id);
         return ResponseEntity.noContent().build();
     }
-
 
     @GetMapping("/endtime")
     public LocalTime calculateEndTime(@RequestParam LocalTime startTime, @RequestParam int laps) {

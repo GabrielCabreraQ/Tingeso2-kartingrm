@@ -6,7 +6,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     hostname: localhost
 
@@ -16,40 +16,37 @@ spring:
       discovery:
         locator:
           enabled: true
-        default-filters:
-          - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: '*'
-            allowedMethods: "*"
-            allowedHeaders: "*"
+
       routes:
-        - id: booking-service
+        - id: booking-service-booking
           uri: lb://booking-service
           predicates:
             - Path=/api/booking/**
-        - id: FrequencyDiscount-service
-          uri: lb://FrequencyDiscount-service
+        - id: booking-service-client
+          uri: lb://booking-service
+          predicates:
+            - Path=/api/client/**
+        - id: frequencydiscount-service
+          uri: lb://frequencydiscount-service
           predicates:
             - Path=/api/frequencydiscount/**
-        - id: GroupDiscount-service
-          uri: lb://GroupDiscount-service
+        - id: groupgiscount-service
+          uri: lb://groupdiscount-service
           predicates:
             - Path=/api/groupdiscount/**
-        - id: IncomingReport-service
-          uri: lb://IncomingReport-service
+        - id: incomingreport-service
+          uri: lb://incomingreport-service
           predicates:
             - Path=/api/report/**
-        - id: SpecialDays-service
-          uri: lb://SpecialDays-service
+        - id: specialdays-service
+          uri: lb://specialdays-service
           predicates:
             - Path=/api/specialdays/**
-        - id: Track-service
-          uri: lb://Track-service
+        - id: track-service
+          uri: lb://track-service
           predicates:
             - Path=/api/track/**
-        - id: Pricing-service
-          uri: lb://Pricing-service
+        - id: pricing-service
+          uri: lb://pricing-service
           predicates:
             - Path=/api/pricing/**

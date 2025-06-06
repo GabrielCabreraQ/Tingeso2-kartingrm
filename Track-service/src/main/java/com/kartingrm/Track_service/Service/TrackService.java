@@ -1,7 +1,6 @@
-package com.kartingrm.Track_service.Service;
+package com.kartingrm.track_service.Service;
 
-import com.kartingrm.Track_service.Model.SpecialDays;
-import com.kartingrm.Track_service.Repository.TrackRepository;
+import com.kartingrm.track_service.Repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +19,7 @@ public class TrackService {
     RestTemplate restTemplate;
 
     public boolean isSpecialDay(LocalDate date) {
-        String url = "http://SpecialDays-service/api/specialdays/isSpecial?date=" + date.toString();
+        String url = "http://specialdays-service/api/specialdays/isSpecial/" + date.toString();
         return restTemplate.getForObject(url, Boolean.class);
     }
 

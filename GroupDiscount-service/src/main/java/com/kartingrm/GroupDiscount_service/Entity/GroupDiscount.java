@@ -1,4 +1,4 @@
-package com.kartingrm.GroupDiscount_service.Entity;
+package com.kartingrm.groupdiscount_service.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

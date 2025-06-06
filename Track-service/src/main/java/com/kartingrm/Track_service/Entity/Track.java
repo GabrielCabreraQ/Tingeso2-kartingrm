@@ -1,4 +1,4 @@
-package com.kartingrm.Track_service.Entity;
+package com.kartingrm.track_service.Entity;
 
 
 import jakarta.persistence.*;

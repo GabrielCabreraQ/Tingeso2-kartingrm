@@ -6,7 +6,7 @@ spring:
       server:
         git:
           default-label: main
-          uri: https://github.com/GabrielCabreraQ/Tingeso2-kartingrm
+          uri: https://github.com/GabrielCabreraQ/TingesoEva2_kartingrm
           search-paths: config-data
   application:
     name: config-service

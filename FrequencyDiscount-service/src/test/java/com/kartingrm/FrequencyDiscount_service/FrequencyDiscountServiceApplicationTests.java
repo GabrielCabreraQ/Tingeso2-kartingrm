@@ -1,10 +1,10 @@
-package com.kartingrm.FrequencyDiscount_service;
+package com.kartingrm.frequencydiscount_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FrequencyDiscountServiceApplicationTests {
+class FrequencydiscountServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

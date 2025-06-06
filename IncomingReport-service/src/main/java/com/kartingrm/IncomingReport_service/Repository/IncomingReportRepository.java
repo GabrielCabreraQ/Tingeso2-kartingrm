@@ -1,6 +1,6 @@
-package com.kartingrm.IncomingReport_service.Repository;
+package com.kartingrm.incomingreport_service.Repository;
 
-import com.kartingrm.IncomingReport_service.Entity.IncomingReport;
+import com.kartingrm.incomingreport_service.Entity.IncomingReport;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

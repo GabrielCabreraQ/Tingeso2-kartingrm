@@ -1,4 +1,4 @@
-package com.kartingrm.Track_service.Config;
+package com.kartingrm.track_service.Config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

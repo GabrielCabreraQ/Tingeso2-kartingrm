@@ -1,4 +1,4 @@
-package com.kartingrm.FrequencyDiscount_service.Model;
+package com.kartingrm.frequencydiscount_service.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

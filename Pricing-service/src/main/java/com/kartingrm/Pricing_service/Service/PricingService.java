@@ -1,9 +1,8 @@
-package com.kartingrm.Pricing_service.Service;
+package com.kartingrm.pricing_service.Service;
 
-import com.kartingrm.Pricing_service.Entity.Pricing;
-import com.kartingrm.Pricing_service.Model.Client;
-import com.kartingrm.Pricing_service.Model.GroupDiscount;
-import com.kartingrm.Pricing_service.Repository.PricingRepository;
+import com.kartingrm.pricing_service.Entity.Pricing;
+import com.kartingrm.pricing_service.Model.Client;
+import com.kartingrm.pricing_service.Repository.PricingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -147,14 +146,14 @@ public class PricingService {
     //============== REST TEMPLATE METHODS ============== //
 
     public double calculateGroupDiscount(int groupsize) {
-        String url = "http://GroupDiscount-service/api/calculate" + "/" + groupsize;
+        String url = "http://groupdiscount-service/api/groupdiscount/calculate" + "/" + groupsize;
         return restTemplate.getForObject(url, Double.class);
 
 
     }
 
     public double calculateFrequencyDiscount(Client participant, LocalDate bookingDate) {
-        String url = "http://pricing-service/api/frequencydiscount/calculate";
+        String url = "http://frequencydiscount-service/api/frequencydiscount/calculate";
 
         Map<String, Object> body = Map.of(
                 "participant", participant,
@@ -176,12 +175,12 @@ public class PricingService {
     }
 
     public boolean isSpecialDay(LocalDate date) {
-        String url = "http://SpecialDays-service/api/specialdays/isSpecial/{date}";
+        String url = "http://specialdays-service/api/specialdays/isSpecial/{date}";
         return restTemplate.getForObject(url, Boolean.class, date);
     }
 
     public boolean isWeekend(LocalDate date) {
-        String url = "http://Track-service/api/track/isWeekend/{date}";
+        String url = "http://track-service/api/track/isWeekend/{date}";
         return restTemplate.getForObject(url, Boolean.class, date);
     }
 

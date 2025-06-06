@@ -1,11 +1,10 @@
 package com.kartingrm.booking_service.Service;
 
-import com.kartingrm.booking_service.Repository.ClientRepository;
 import com.kartingrm.booking_service.Entity.Client;
+import com.kartingrm.booking_service.Repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 

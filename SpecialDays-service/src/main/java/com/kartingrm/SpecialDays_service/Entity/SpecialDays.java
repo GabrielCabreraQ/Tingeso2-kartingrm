@@ -1,4 +1,4 @@
-package com.kartingrm.SpecialDays_service.Entity;
+package com.kartingrm.specialdays_service.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,9 +1,9 @@
-package com.kartingrm.GroupDiscount_service.Service;
+package com.kartingrm.groupdiscount_service.Service;
 
 
-import com.kartingrm.GroupDiscount_service.Entity.GroupDiscount;
-import com.kartingrm.GroupDiscount_service.Model.Pricing;
-import com.kartingrm.GroupDiscount_service.Repository.GroupDiscountRepository;
+import com.kartingrm.groupdiscount_service.Entity.GroupDiscount;
+import com.kartingrm.groupdiscount_service.Model.Pricing;
+import com.kartingrm.groupdiscount_service.Repository.GroupDiscountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -17,7 +17,7 @@ public class GroupDiscountService {
     RestTemplate restTemplate;
 
     public Pricing getLastPricing() {
-        String url = "http://Pricing-service/api/pricing/last";
+        String url = "http://pricing-service/api/pricing/last";
         return restTemplate.getForObject(url, Pricing.class);
     }
 

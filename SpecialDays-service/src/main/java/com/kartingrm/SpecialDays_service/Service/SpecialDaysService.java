@@ -1,8 +1,8 @@
-package com.kartingrm.SpecialDays_service.Service;
+package com.kartingrm.specialdays_service.Service;
 
 
-import com.kartingrm.SpecialDays_service.Entity.SpecialDays;
-import com.kartingrm.SpecialDays_service.Repository.SpecialDaysRepository;
+import com.kartingrm.specialdays_service.Entity.SpecialDays;
+import com.kartingrm.specialdays_service.Repository.SpecialDaysRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

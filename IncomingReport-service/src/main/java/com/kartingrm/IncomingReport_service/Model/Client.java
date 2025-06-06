@@ -1,7 +1,6 @@
-package com.kartingrm.IncomingReport_service.Model;
+package com.kartingrm.incomingreport_service.Model;
 
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

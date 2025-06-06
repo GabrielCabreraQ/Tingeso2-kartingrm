@@ -1,13 +1,13 @@
-package com.kartingrm.IncomingReport_service;
+package com.kartingrm.incomingreport_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IncomingReportServiceApplication {
+public class IncomingreportServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IncomingReportServiceApplication.class, args);
+		SpringApplication.run(IncomingreportServiceApplication.class, args);
 	}
 
 }

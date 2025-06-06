@@ -1,7 +1,7 @@
-package com.kartingrm.Track_service.Repository;
+package com.kartingrm.track_service.Repository;
 
 
-import com.kartingrm.Track_service.Entity.Track;
+import com.kartingrm.track_service.Entity.Track;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

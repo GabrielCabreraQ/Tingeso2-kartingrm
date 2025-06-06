@@ -1,6 +1,6 @@
-package com.kartingrm.SpecialDays_service.Repository;
+package com.kartingrm.specialdays_service.Repository;
 
-import com.kartingrm.SpecialDays_service.Entity.SpecialDays;
+import com.kartingrm.specialdays_service.Entity.SpecialDays;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

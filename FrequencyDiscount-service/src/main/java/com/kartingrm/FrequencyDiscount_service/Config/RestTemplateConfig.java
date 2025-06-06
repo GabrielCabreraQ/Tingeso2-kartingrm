@@ -1,4 +1,4 @@
-package com.kartingrm.FrequencyDiscount_service.Config;
+package com.kartingrm.frequencydiscount_service.Config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

@@ -1,13 +1,13 @@
 spring:
   application:
-    name: IncomingReport-service
+    name: incomingreport-service
   cloud:
     config:
-      enable: true
+      enabled: true
       uri: http://localhost:8081
   datasource:
     url: jdbc:postgresql://localhost:5432/incomingreport
-    user: postgres
+    username: postgres
     password: 1234
   jpa:
     hibernate:

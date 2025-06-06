@@ -1,13 +1,13 @@
-package com.kartingrm.GroupDiscount_service;
+package com.kartingrm.groupdiscount_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GroupDiscountServiceApplication {
+public class GroupdiscountServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GroupDiscountServiceApplication.class, args);
+		SpringApplication.run(GroupdiscountServiceApplication.class, args);
 	}
 
 }

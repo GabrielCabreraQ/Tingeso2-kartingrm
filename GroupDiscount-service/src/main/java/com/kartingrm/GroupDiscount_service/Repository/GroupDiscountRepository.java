@@ -1,6 +1,6 @@
-package com.kartingrm.GroupDiscount_service.Repository;
+package com.kartingrm.groupdiscount_service.Repository;
 
-import com.kartingrm.GroupDiscount_service.Entity.GroupDiscount;
+import com.kartingrm.groupdiscount_service.Entity.GroupDiscount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

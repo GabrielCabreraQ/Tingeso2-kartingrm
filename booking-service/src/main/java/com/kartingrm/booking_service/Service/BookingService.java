@@ -40,8 +40,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 @Service
 public class BookingService {
@@ -91,6 +91,7 @@ public class BookingService {
         return bookingRepository.findBookingsBetweenDates(startDate, endDate);
     }
 
+    @Transactional
     public List<Booking> getBookingsByLapsAndDate(int laps, int month, int year) {
         return bookingRepository.findBookingLapsByMY(laps, month, year);
     }
@@ -173,6 +174,7 @@ public class BookingService {
 
         for (Client participant : nonBirthdayClients) {
             double individualPrice = calculatePricePerPerson(participant, bookingDate, groupSize, numberLap, pricing, 0);
+
             totalPrice += individualPrice;
         }
 
@@ -462,7 +464,7 @@ public class BookingService {
 
 
     public boolean isBirthday(Client client, LocalDate bookingDate) {
-        String url = "http://Pricing-service/api/pricing/is-bday";
+        String url = "http://pricing-service/api/pricing/is-bday";
 
         BdayCheck request = new BdayCheck(client, bookingDate);
 
@@ -477,22 +479,22 @@ public class BookingService {
     }
 
     public Pricing getLastPricing() {
-        String url = "http://Pricing-service/api/pricing/last";
+        String url = "http://pricing-service/api/pricing/last";
         return restTemplate.getForObject(url, Pricing.class);
     }
 
     public LocalTime calculateEndTime(LocalTime startTime, int laps) {
-        String url = "http://pricing-service/api/pricing/entime?startTime=" + startTime + "&laps=" + laps;
+        String url = "http://pricing-service/api/pricing/endtime?startTime=" + startTime + "&laps=" + laps;
         return restTemplate.getForObject(url, LocalTime.class);
     }
 
     public LocalTime[] getAvailableHours(LocalDate bookingDate) {
-        String url = "http://Track-service/api/track/available-hours?date=" + bookingDate;
+        String url = "http://track-service/api/track/available-hours?date=" + bookingDate;
         return restTemplate.getForObject(url, LocalTime[].class);
     }
 
     public double calculateTotalPriceForBirthdayClients(List<Client> birthdayClients, int numberLap, int groupSize, int birthdayLimit, LocalDate bookingDate, Pricing pricing) {
-        String url = "http://Pricing-service/api/pricing/calculate-birthday-total";
+        String url = "http://pricing-service/api/pricing/calculate-birthday-total";
 
         BdayPricingRequest request = new BdayPricingRequest(
                 birthdayClients,
@@ -507,7 +509,7 @@ public class BookingService {
     }
 
     public double calculatePricePerPerson(Client participant, LocalDate bookingDate, int groupSize, int numberLap, Pricing pricing, int applyBirthday) {
-        String url = "http://pricing-service:8080/api/pricing/calculate-price";
+        String url = "http://pricing-service/api/pricing/calculate-price";
 
         PriceCalculationRequest request = new PriceCalculationRequest(
                 participant,
@@ -523,13 +525,13 @@ public class BookingService {
     }
 
     public double calculateGroupDiscount(int groupsize) {
-        String url = "http://GroupDiscount-service/api/calculate" + "/" + groupsize;
+        String url = "http://groupdiscount-service/api/groupdiscount/calculate" + "/" + groupsize;
         return restTemplate.getForObject(url, Double.class);
 
     }
 
     public double calculateFrequencyDiscount(Client participant, LocalDate bookingDate) {
-        String url = "http://pricing-service/api/frequencydiscount/calculate";
+        String url = "http://frequencydiscount-service/api/frequencydiscount/calculate";
 
         Map<String, Object> body = Map.of(
                 "participant", participant,
@@ -550,7 +552,7 @@ public class BookingService {
         return response.getBody();
     }
     public double getBasePriceForLaps(int numberLap) {
-        String url = UriComponentsBuilder.fromHttpUrl("http://Pricing-service/api/pricing/base-price/{numberLap}")
+        String url = UriComponentsBuilder.fromHttpUrl("http://pricing-service/api/pricing/base-price/{numberLap}")
                 .buildAndExpand(numberLap)
                 .toUriString();
 
@@ -558,16 +560,16 @@ public class BookingService {
     }
 
     public boolean isSpecialDay(LocalDate date) {
-        String url = "http://SpecialDays-service/api/specialdays/isSpecial/{date}";
+        String url = "http://specialdays-service/api/specialdays/isSpecial/{date}";
         return restTemplate.getForObject(url, Boolean.class, date);
     }
 
     public boolean isWeekend(LocalDate date) {
-        String url = "http://Track-service/api/track/isWeekend/{date}";
+        String url = "http://track-service/api/track/isWeekend/{date}";
         return restTemplate.getForObject(url, Boolean.class, date);
     }
     public double calculateBirthdayDiscount(Client participant, LocalDate bookingDate) {
-        String url = UriComponentsBuilder.fromHttpUrl("http://Pricing-service/api/pricing/calculate-bdaydiscount")
+        String url = UriComponentsBuilder.fromHttpUrl("http://pricing-service/api/pricing/calculate-bdaydiscount")
                 .queryParam("bookingDate", bookingDate.toString())
                 .toUriString();
 

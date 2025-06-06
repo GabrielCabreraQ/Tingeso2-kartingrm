@@ -1,4 +1,4 @@
-package com.kartingrm.IncomingReport_service.Config;
+package com.kartingrm.incomingreport_service.Config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

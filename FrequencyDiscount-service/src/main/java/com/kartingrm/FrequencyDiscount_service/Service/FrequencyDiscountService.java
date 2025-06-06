@@ -1,10 +1,10 @@
-package com.kartingrm.FrequencyDiscount_service.Service;
+package com.kartingrm.frequencydiscount_service.Service;
 
 
-import com.kartingrm.FrequencyDiscount_service.Entity.FrequencyDiscount;
-import com.kartingrm.FrequencyDiscount_service.Model.Client;
-import com.kartingrm.FrequencyDiscount_service.Model.Pricing;
-import com.kartingrm.FrequencyDiscount_service.Repository.FrequencyDiscountRepository;
+import com.kartingrm.frequencydiscount_service.Entity.FrequencyDiscount;
+import com.kartingrm.frequencydiscount_service.Model.Client;
+import com.kartingrm.frequencydiscount_service.Model.Pricing;
+import com.kartingrm.frequencydiscount_service.Repository.FrequencyDiscountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,7 +22,7 @@ public class FrequencyDiscountService {
 
 
     public Pricing getLastPricing() {
-        String url = "http://Pricing-service/api/pricing/last";
+        String url = "http://pricing-service/api/pricing/last";
         return restTemplate.getForObject(url, Pricing.class);
     }
 

@@ -1,6 +1,6 @@
-package com.kartingrm.FrequencyDiscount_service.Repository;
+package com.kartingrm.frequencydiscount_service.Repository;
 
-import com.kartingrm.FrequencyDiscount_service.Entity.FrequencyDiscount;
+import com.kartingrm.frequencydiscount_service.Entity.FrequencyDiscount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
-package com.kartingrm.Pricing_service.Repository;
+package com.kartingrm.pricing_service.Repository;
 
-import com.kartingrm.Pricing_service.Entity.Pricing;
+import com.kartingrm.pricing_service.Entity.Pricing;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

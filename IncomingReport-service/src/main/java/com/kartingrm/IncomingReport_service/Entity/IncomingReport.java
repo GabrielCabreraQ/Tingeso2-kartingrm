@@ -1,4 +1,4 @@
-package com.kartingrm.IncomingReport_service.Entity;
+package com.kartingrm.incomingreport_service.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

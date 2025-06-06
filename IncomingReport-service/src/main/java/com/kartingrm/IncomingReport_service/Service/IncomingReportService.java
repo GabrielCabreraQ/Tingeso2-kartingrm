@@ -1,8 +1,8 @@
-package com.kartingrm.IncomingReport_service.Service;
+package com.kartingrm.incomingreport_service.Service;
 
-import com.kartingrm.IncomingReport_service.Entity.IncomingReport;
-import com.kartingrm.IncomingReport_service.Model.Booking;
-import com.kartingrm.IncomingReport_service.Repository.IncomingReportRepository;
+import com.kartingrm.incomingreport_service.Entity.IncomingReport;
+import com.kartingrm.incomingreport_service.Model.Booking;
+import com.kartingrm.incomingreport_service.Repository.IncomingReportRepository;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
@@ -214,28 +214,30 @@ public class IncomingReportService {
         }
         twentyLaps.createCell(cellIndex20).setCellValue(totalIncome20LapsAll);
 
-        Row totalC = sheet.createRow(7);
-        totalC.createCell(0).setCellValue("TOTAL");
-
-
-        // Crear fila de total general por mes (suma vertical por columna)
         Row totalRow = sheet.createRow(7);
         totalRow.createCell(0).setCellValue("TOTAL");
 
-        int numMeses = Period.between(startDate.withDayOfMonth(1), endDate.withDayOfMonth(1)).getMonths() + 1;
+        YearMonth startYearMonth = YearMonth.from(startDate);
+        YearMonth endYearMonth = YearMonth.from(endDate);
 
-        for (int col = 1; col <= numMeses + 1; col++) {
+        int numberOfMonthColumns = (endYearMonth.getYear() - startYearMonth.getYear()) * 12 +
+                (endYearMonth.getMonthValue() - startYearMonth.getMonthValue()) + 1;
+
+
+        for (int col = 1; col <= numberOfMonthColumns + 1; col++) {
             double totalMes = 0.0;
 
-            for (int fila = 4; fila <= 7; fila++) { // filas de 10, 15 y 20 vueltas
-                Cell cell = sheet.getRow(fila).getCell(col);
-                if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                    totalMes += cell.getNumericCellValue();
+            for (int fila = 4; fila <= 6; fila++) {
+                Row dataRow = sheet.getRow(fila);
+                if (dataRow != null) { // Verificar si la fila existe
+                    Cell cell = dataRow.getCell(col);
+                    if (cell != null && cell.getCellType() == CellType.NUMERIC) {
+                        totalMes += cell.getNumericCellValue();
+                    }
                 }
             }
             totalRow.createCell(col).setCellValue(totalMes);
         }
-
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         workbook.write(baos);

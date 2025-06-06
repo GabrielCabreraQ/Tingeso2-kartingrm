@@ -1,4 +1,4 @@
-package com.kartingrm.Pricing_service.Model;
+package com.kartingrm.pricing_service.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

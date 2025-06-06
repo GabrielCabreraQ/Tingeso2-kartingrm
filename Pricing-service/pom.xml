@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kartingrm</groupId>
-	<artifactId>Pricing-service</artifactId>
+	<artifactId>pricing-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Pricing-service</name>
+	<name>pricing-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

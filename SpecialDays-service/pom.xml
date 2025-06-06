@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kartingrm</groupId>
-	<artifactId>SpecialDays-service</artifactId>
+	<artifactId>specialdays-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpecialDays-service</name>
+	<name>specialdays-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

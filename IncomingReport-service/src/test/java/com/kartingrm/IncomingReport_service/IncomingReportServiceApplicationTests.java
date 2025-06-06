@@ -1,10 +1,10 @@
-package com.kartingrm.IncomingReport_service;
+package com.kartingrm.incomingreport_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IncomingReportServiceApplicationTests {
+class IncomingreportServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

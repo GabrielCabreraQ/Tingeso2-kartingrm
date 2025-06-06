@@ -1,8 +1,8 @@
-package com.kartingrm.IncomingReport_service.Controller;
+package com.kartingrm.incomingreport_service.Controller;
 
 
-import com.kartingrm.IncomingReport_service.Entity.IncomingReport;
-import com.kartingrm.IncomingReport_service.Service.IncomingReportService;
+import com.kartingrm.incomingreport_service.Entity.IncomingReport;
+import com.kartingrm.incomingreport_service.Service.IncomingReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +17,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/report")
-@CrossOrigin("*")
 public class IncomingReportController {
     @Autowired
     IncomingReportService incomingReportService;

@@ -1,4 +1,4 @@
-package com.kartingrm.Pricing_service.Entity;
+package com.kartingrm.pricing_service.Entity;
 
 
 import jakarta.persistence.*;

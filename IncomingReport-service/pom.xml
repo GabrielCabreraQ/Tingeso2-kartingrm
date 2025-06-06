@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kartingrm</groupId>
-	<artifactId>IncomingReport-service</artifactId>
+	<artifactId>incomingreport-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>IncomingReport-service</name>
+	<name>incomingreport-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

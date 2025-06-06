@@ -1,8 +1,8 @@
-package com.kartingrm.SpecialDays_service.Controller;
+package com.kartingrm.specialdays_service.Controller;
 
 
-import com.kartingrm.SpecialDays_service.Entity.SpecialDays;
-import com.kartingrm.SpecialDays_service.Service.SpecialDaysService;
+import com.kartingrm.specialdays_service.Entity.SpecialDays;
+import com.kartingrm.specialdays_service.Service.SpecialDaysService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/specialdays")
-@CrossOrigin("*")
 public class SpecialDaysController {
     @Autowired
     private SpecialDaysService specialDaysService;
@@ -24,7 +23,6 @@ public class SpecialDaysController {
         List<SpecialDays> specialDays = specialDaysService.getSpecialDays();
         return ResponseEntity.ok(specialDays);
     }
-
 
     @GetMapping("/{id}")
     public ResponseEntity<SpecialDays> getSpecialDayById(@PathVariable Long id) {
@@ -49,6 +47,7 @@ public class SpecialDaysController {
         specialDaysService.deleteSpecialDay(id);
         return ResponseEntity.noContent().build();
     }
+
     @GetMapping("/isSpecial/{date}")
     public ResponseEntity<Boolean> isSpecialDay(
             @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
